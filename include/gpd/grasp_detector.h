@@ -138,6 +138,12 @@ class GraspDetector {
       std::vector<std::unique_ptr<candidate::Hand>> &hands);
 
   /**
+   * \brief change the workspace dimensions.
+   * \param workspace 6 double values describing the bounding box of the workspace
+   */
+  void setWorkspace(std::vector<double> workspace);
+
+  /**
    * \brief Creates grasp images and prunes grasps below a given score.
    * \param cloud the point cloud
    * \param hand_set_list the grasps

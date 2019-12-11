@@ -133,6 +133,14 @@ class CandidatesGenerator {
     return hand_search_->getParams();
   }
 
+  Parameters getParameters() {
+    return params_;
+  }
+
+  void resetParameters(Parameters params) {
+    params_ = params;
+  }
+
  private:
   std::unique_ptr<candidate::HandSearch> hand_search_;
 

@@ -526,6 +526,12 @@ std::vector<int> GraspDetector::evalGroundTruth(
   return candidates_generator_->reevaluateHypotheses(cloud_gt, hands);
 }
 
+void GraspDetector::setWorkspace(std::vector<double> workspace) {
+  auto parameters = candidates_generator_->getParameters();
+  parameters.workspace_ = workspace;
+  candidates_generator_->resetParameters(parameters);
+}
+
 std::vector<std::unique_ptr<candidate::Hand>>
 GraspDetector::pruneGraspCandidates(
     const util::Cloud &cloud,
